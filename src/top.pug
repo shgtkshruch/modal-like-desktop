@@ -1,0 +1,70 @@
+extends partials/layout
+
+block title
+  title modal like desktop
+
+block body
+  .l-container
+    .btn Click Me
+
+    .modal
+      .window
+        header.toolbar.toolbar-header(style="position: relative;")
+          ul.controll.cf
+            - var records = [];
+            - records[0] = {color: 'fc605b', class: 'close', title: 'Red'};
+            - records[1] = {color: 'fdbc40', class: 'small', title: 'Orange'};
+            - records[2] = {color: '34c84a', class: 'big', title: 'Green'};
+            each record in records
+              .controll__icon.icon.icon-record(class=`controll__icon--${record.class}` style=`color: #${record.color}`)
+
+          h1.title Lancers-example
+
+        .window-content
+          .pane-group
+            .pane.pane-sm.sidebar
+              nav.nav-group
+                h5.nav-group-title Favorites
+                - var items = [];
+                - items[0] = {title: 'connors', icon: 'home'};
+                - items[1] = {title: 'Downloads', icon: 'download'};
+                - items[2] = {title: 'Documents', icon: 'folder'};
+                - items[3] = {title: 'AirPlay', icon: 'signal'};
+                - items[4] = {title: 'Applications', icon: 'print'};
+                - items[5] = {title: 'Desktop', icon: 'cloud'};
+                each item, i in items
+                  if i === 0
+                    a.nav-group-item.active
+                      span.icon(class=`icon-${item.icon}`)
+                      = item.title
+                  else
+                    .nav-group-item
+                      span.icon(class=`icon-${item.icon}`)
+                      = item.title
+                h5.nav-group-title Tags
+                  -  var records = [];
+                  - records[0] = {color: 'fc605b', title: 'Red'};
+                  - records[1] = {color: 'fdbc40', title: 'Orange'};
+                  - records[2] = {color: '34c84a', title: 'Green'};
+                  - records[3] = {color: '57acf5', title: 'Blue'};
+                  each record, i in records
+                    .nav-group-item
+                      .icon.icon-record(style=`color: #${record.color}`)
+                      = record.title
+            .pane
+              table.table-striped
+                thead
+                  tr
+                    td Name
+                    td File Size
+                    td Modifed Date
+                tbody
+                  - var i = 0;
+                  while i < 50
+                    tr
+                      td script.js
+                      td 10kb
+                      td 2016/11/08
+                    - i++;
+
+        footer.toolbar.toolbar-footer
