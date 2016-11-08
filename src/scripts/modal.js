@@ -8,8 +8,8 @@
     $modal
       .show(0)
       .animate({
-        width: '80vw',
-        height: '80vh'
+        width: '800px',
+        height: '500px'
       }, duration);
   });
 

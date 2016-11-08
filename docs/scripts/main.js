@@ -1,1 +1,1 @@
-"use strict";!function(){var i=$(".modal"),t=250;$(".btn").click(function(n){i.show(0).animate({width:"80vw",height:"80vh"},t)}),$(".controll__icon--close").click(function(n){i.animate({width:0,height:0},{duration:t,done:function(){$(this).hide()}})})}();
+"use strict";!function(){var i=$(".modal"),t=250;$(".btn").click(function(n){i.show(0).animate({width:"800px",height:"500px"},t)}),$(".controll__icon--close").click(function(n){i.animate({width:0,height:0},{duration:t,done:function(){$(this).hide()}})})}();
